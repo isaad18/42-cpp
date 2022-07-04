@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/isaad/Desktop/cpp/cpp00/ex00'
+c++    -c -o megaphone.o megaphone.cpp
+clang++ -Wall -Werror -Wextra -o megaphone megaphone.o
+make: Leaving directory `/Users/isaad/Desktop/cpp/cpp00/ex00'
+ 
