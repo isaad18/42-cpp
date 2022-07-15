@@ -26,7 +26,7 @@ void print_info(Main *data) {
 	std::cout << data->nick_name << std::endl;
 	// std::cout << std::endl << data->email_address;
 	// std::cout << std::endl << data->phone_number;
-	// std::cout << std::endl << data->darkest_secret;
+	// std::cout << std::endl << data->darkest_secret;hhhhhhhh
 }
 
 void print_table_header(){
