@@ -11,7 +11,7 @@ Fixed::Fixed(Fixed const &_new){
 }
 
 Fixed::Fixed(float _new):
-value(roundf(_new * (1 << bits))){}
+value(roundf(_new * (1 << Fixed::bits))){}
 
 Fixed::Fixed(int _new):
 value(_new){}
@@ -27,7 +27,7 @@ Fixed &Fixed::operator=(Fixed const &_new){
 	return *this;
 }
 
-std::ostream &Fixed::operator<<(std::ostream &s, Fixed const &_new)
+std::ostream &operator<<(std::ostream &s, Fixed const &_new)
 {s << _new.toFloat(); return s;}
 
 int Fixed::getRawBits( void ) const{
@@ -44,7 +44,7 @@ int Fixed::toInt(void) const
 {return ((int)value);}
 
 float Fixed::toFloat(void) const
-{return ((float)value / (1 >> bits));}
+{return ((float)value / (1 >> Fixed::bits));}
 
 int main( void ) {
 Fixed a;
