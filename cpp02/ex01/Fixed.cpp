@@ -5,7 +5,7 @@ Fixed::Fixed(){
 	this->value = 0;
 }
 
-Fixed::Fixed(Fixed &_new){
+Fixed::Fixed(Fixed const &_new){
 	std::cout << "Copy constructor called\n";
 	this->value = _new.getRawBits();
 }
@@ -21,14 +21,14 @@ Fixed::~Fixed(){
 	std::cout << "Destructor called\n";
 }
 
-std::ostream &Fixed::operator<<(std::ostream &s, Fixed &_new)
-{s << _new.toFloat(); return s;}
-
-Fixed &Fixed::operator=(Fixed &_new){
+Fixed &Fixed::operator=(Fixed const &_new){
 	std::cout << "Copy assignment operator called\n";
 	this->value = _new.getRawBits();
 	return *this;
 }
+
+std::ostream &Fixed::operator<<(std::ostream &s, Fixed const &_new)
+{s << _new.toFloat(); return s;}
 
 int Fixed::getRawBits( void ) const{
 	std::cout << "getRawBits member function called\n";
