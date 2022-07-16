@@ -7,7 +7,7 @@
 class Fixed {
 	private:
 		int value;
-		static const int def = 8;
+		static const int bits = 8;
 	public:
 		Fixed();
 		Fixed(Fixed &_new);

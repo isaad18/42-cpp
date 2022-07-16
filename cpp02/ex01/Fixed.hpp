@@ -8,13 +8,14 @@
 class Fixed {
 	private:
 		int value;
-		static const int def = 8;
+		static const int bits = 8;
 	public:
 		Fixed();
 		Fixed(Fixed &_new);
-		Fixed(int _new); //int
 		Fixed(float _new); //float
+		Fixed(int _new); //int
 		virtual ~Fixed();
+		std::ostream &operator<<(std::ostream &s, Fixed &_new);
 		Fixed &operator=(Fixed &_new);
 		int getRawBits( void ) const;
 		void setRawBits(int const raw);
