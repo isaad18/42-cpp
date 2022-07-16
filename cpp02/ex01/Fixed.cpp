@@ -11,10 +11,10 @@ Fixed::Fixed(Fixed const &_new){
 }
 
 Fixed::Fixed(float _new):
-value(roundf(_new * (1 << Fixed::bits))){}
+value(roundf((float)_new * (float)(1 << Fixed::bits))){}
 
 Fixed::Fixed(int _new):
-value(_new){}
+value((_new * (1 << Fixed::bits))){}
 
 
 Fixed::~Fixed(){
@@ -41,10 +41,10 @@ void Fixed::setRawBits(int const raw){
 }
 
 int Fixed::toInt(void) const
-{return ((int)value);}
+{return ((int)(value / (1 << Fixed::bits)));}
 
 float Fixed::toFloat(void) const
-{return ((float)value / (1 >> Fixed::bits));}
+{return ((float)value / (float)(1 << Fixed::bits));}
 
 int main( void ) {
 Fixed a;
