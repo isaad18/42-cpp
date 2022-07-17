@@ -32,7 +32,25 @@ std::ostream &operator<<(std::ostream &s, Fixed const &_new)
 
 Fixed Fixed::operator*(Fixed const &b4){
 	Fixed N;
-	N.setRawBits((this->getRawBits() * b4.getRawBits()) / (1 << Fixed::bits));
+	N.setRawBits((this->toFloat() * b4.toFloat()) * (1 << Fixed::bits));
+	return (N);
+}
+
+Fixed Fixed::operator/(Fixed const &b4){
+	Fixed N(0);
+	N.setRawBits((this->toFloat() / b4.toFloat()) * (1 << Fixed::bits));
+	return (N);
+}
+
+Fixed Fixed::operator+(Fixed const &b4){
+	Fixed N(0);
+	N.setRawBits((this->toFloat() + b4.toFloat()) * (1 << Fixed::bits));
+	return (N);
+}
+
+Fixed Fixed::operator-(Fixed const &b4){
+	Fixed N(0);
+	N.setRawBits((this->toFloat() - b4.toFloat()) * (1 << Fixed::bits));
 	return (N);
 }
 

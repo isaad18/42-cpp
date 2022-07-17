@@ -17,7 +17,13 @@ class Fixed {
 		virtual ~Fixed();
 		Fixed &operator=(Fixed const &_new);
 		Fixed operator*(Fixed const &b4);
-		int getRawBits( void ) const;
+		Fixed operator/(Fixed const &b4);
+		Fixed operator+(Fixed const &b4);
+		Fixed operator-(Fixed const &b4);
+		// void operator++(){
+		// 	setRawBits((toFloat() + (float)1) * (1 << Fixed::bits));
+		// }
+		int getRawBits(void) const;
 		void setRawBits(int const raw);
 		float toFloat(void) const;
 		int toInt(void) const;
