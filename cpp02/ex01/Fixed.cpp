@@ -14,7 +14,7 @@ Fixed::Fixed(float _new):
 value(roundf(_new * (1 << bits))){}
 
 Fixed::Fixed(int _new):
-value(_new){}
+value(_new * (1 << bits)){}
 
 
 Fixed::~Fixed(){
@@ -41,7 +41,7 @@ void Fixed::setRawBits(int const raw){
 }
 
 int Fixed::toInt(void) const
-{return ((int)value);}
+{return ((int)value / (1 << bits));}
 
 float Fixed::toFloat(void) const
 {return ((float)value / (1 << bits));}

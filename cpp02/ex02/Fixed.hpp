@@ -16,12 +16,12 @@ class Fixed {
 		Fixed(Fixed const &_new);
 		virtual ~Fixed();
 		Fixed &operator=(Fixed const &_new);
+		Fixed operator*(Fixed const &b4);
 		int getRawBits( void ) const;
 		void setRawBits(int const raw);
 		float toFloat(void) const;
 		int toInt(void) const;
 };
-
 std::ostream &operator<<(std::ostream &s, Fixed const &_new);
 
 #endif
