@@ -21,18 +21,59 @@ Fixed::~Fixed(){
 	std::cout << "Destructor called\n";
 }
 
-Fixed &Fixed::operator=(Fixed const &_new){
-	std::cout << "Copy assignment operator called\n";
-	this->value = _new.getRawBits();
-	return *this;
+Fixed &Fixed::operator=(Fixed const &_new){std::cout << "Copy assignment operator called\n";this->value = _new.getRawBits();return *this;}
+
+bool Fixed::operator==(const Fixed &other) const{
+	return this->value == other.value;
 }
 
-std::ostream &operator<<(std::ostream &s, Fixed const &_new)
-{s << _new.toFloat(); return s;}
+bool Fixed::operator!=(const Fixed &other) const{
+	return this->value != other.value;
+}
+
+bool Fixed::operator<(const Fixed &other) const{
+	return this->value < other.value;
+}
+
+bool Fixed::operator>(const Fixed &other) const{
+	return this->value > other.value;
+}
+
+bool Fixed::operator<=(const Fixed &other) const{
+	return this->value <= other.value;
+}
+
+bool Fixed::operator>=(const Fixed &other) const{
+	return this->value >= other.value;
+}
+
+std::ostream &operator<<(std::ostream &s, Fixed const &_new){s << _new.toFloat(); return s;}
 
 Fixed Fixed::operator*(Fixed const &b4){
 	Fixed N;
 	N.setRawBits((this->toFloat() * b4.toFloat()) * (1 << Fixed::bits));
+	return (N);
+}
+
+Fixed Fixed::operator++(){
+	this->value++;
+	return (*this);
+}
+
+Fixed Fixed::operator--(){
+	this->value--;
+	return (*this);
+}
+
+Fixed Fixed::operator++(int){
+	Fixed N(this->toFloat());
+	this->value++;
+	return (N);
+}
+
+Fixed Fixed::operator--(int){
+	Fixed N(this->toFloat());
+	this->value--;
 	return (N);
 }
 
@@ -69,3 +110,40 @@ int Fixed::toInt(void) const
 
 float Fixed::toFloat(void) const
 {return ((float)value / (1 << bits));}
+
+ Fixed const &Fixed::min(Fixed const &one, Fixed const &two){
+	if (one > two)
+		return two;
+	return one;
+}
+ Fixed const &Fixed::max(Fixed const &one, Fixed const &two){
+	if (one > two)
+		return one;
+	return two;
+}
+ Fixed &Fixed::min(Fixed &one, Fixed &two){
+	if (one > two)
+		return two;
+	return one;
+}
+ Fixed &Fixed::max(Fixed &one, Fixed &two){
+	if (one > two)
+		return one;
+	return two;
+}
+
+Fixed const &min(Fixed const &one, Fixed const &two){
+	return ( Fixed::min(one, two));
+}
+
+Fixed const &max(Fixed const &one, Fixed const &two){
+	return ( Fixed::max(one, two));
+}
+
+Fixed &min(Fixed &one, Fixed &two){
+	return ( Fixed::min(one, two));
+}
+
+Fixed &max(Fixed &one, Fixed &two){
+	return ( Fixed::max(one, two));
+}
