@@ -8,7 +8,11 @@ ClapTrap::ClapTrap(std::string name){
 	std::cout << name << " player has been constructed" << std::endl;
 }
 
-void ClapTrap::attack(std::string& target){
+ClapTrap::~ClapTrap(){
+	std::cout << "ClapTrap " << this->name << " has been destroyed, it was already useless" << std::endl;
+}
+
+void ClapTrap::attack(const std::string& target){
 	if (this->mana > 0){
 		std::cout << "ClapTrap " << this->name << " attacked " << target << ", causing " << this->AD << " points of damage!" << std::endl;
 		this->mana--;
@@ -24,6 +28,8 @@ void ClapTrap::takeDamage(unsigned int amount){
 		this->HP -= amount;
 		if (this->HP <= 0)
 			std::cout << this->name << " died" << std::endl;
+		else
+			std::cout << this->name << " got damaged, current HP: " << this->HP << std::endl;
 	}
 }
 
