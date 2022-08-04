@@ -10,6 +10,8 @@ class ScavTrap: virtual public ClapTrap{
 		ScavTrap();
 	public:
 		ScavTrap(std::string name);
+		ScavTrap(ScavTrap const& other){this->name = other.name; this->HP = other.HP; this->mana = other.mana; this->AD = other.AD;}
+		ScavTrap &operator=(ScavTrap const &other){this->name = other.name; this->HP = other.HP; this->mana = other.mana; this->AD = other.AD; return *this; }
 		virtual ~ScavTrap();
 		void Sattack(const std::string& target);
 		void StakeDamage(unsigned int amount);

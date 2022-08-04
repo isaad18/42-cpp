@@ -1,5 +1,13 @@
 #include"ScavTrap.hpp"
 
+ScavTrap::ScavTrap(){
+	this->name = "BOT";
+	this->HP = 100;
+	this->mana = 50;
+	this->AD = 20;
+	std::cout << name << " ScavTrap player has been constructed" << std::endl;
+}
+
 ScavTrap::ScavTrap(std::string name){
 	this->name = name;
 	this->HP = 100;
