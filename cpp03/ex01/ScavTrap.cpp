@@ -1,23 +1,23 @@
-#include"ClapTrap.hpp"
+#include"ScavTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name, int HP, int mana, int AD){
+ScavTrap::ScavTrap(std::string name, int HP, int mana, int AD){
 	this->name = name;
 	this->HP = HP;
 	this->mana = mana;
 	this->AD = AD;
-	std::cout << name << " ClapTrap player has been constructed" << std::endl;
+	std::cout << name << " ScavTrap player has been constructed" << std::endl;
 }
 
-ClapTrap::~ClapTrap(){
-	std::cout << "ClapTrap " << this->name << " has been destroyed, it was already useless" << std::endl;
+ScavTrap::~ScavTrap(){
+	std::cout << "ScavTrap " << this->name << " has been destroyed, it was already useless" << std::endl;
 }
 
-void ClapTrap::attack(const std::string& target){
+void ScavTrap::Sattack(const std::string& target){
 	if (this->AD <= 0)
-		std::cout << "ClapTrap " << this->name << " is so weak to attack" << std::endl;
+		std::cout << "ScavTrap " << this->name << " is so weak to attack" << std::endl;
 	else {
 		if (this->mana > 0){
-			std::cout << "ClapTrap " << this->name << " attacked " << target << ", causing " << this->AD << " points of damage!" << std::endl;
+			std::cout << "ScavTrap " << this->name << " attacked " << target << ", causing " << this->AD << " points of damage!" << std::endl;
 			this->mana--;
 		}
 		else
@@ -25,7 +25,7 @@ void ClapTrap::attack(const std::string& target){
 	}
 }
 
-void ClapTrap::takeDamage(unsigned int amount){
+void ScavTrap::StakeDamage(unsigned int amount){
 	if (HP <= 0)
 		std::cout << this->name << " is already dead" << std::endl;
 	else {
@@ -37,7 +37,7 @@ void ClapTrap::takeDamage(unsigned int amount){
 	}
 }
 
-void ClapTrap::beRepaired(unsigned int amount){
+void ScavTrap::SbeRepaired(unsigned int amount){
 	if (HP <= 0)
 		std::cout << this->name << " is already dead" << std::endl;
 	else {

@@ -11,7 +11,7 @@ class ClapTrap{
 		int mana;
 		int AD;
 	public:
-		ClapTrap(std::string name);
+		ClapTrap(std::string name, int HP, int mana, int AD);
 		virtual ~ClapTrap();
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);

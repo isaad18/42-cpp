@@ -5,8 +5,7 @@ ClapTrap::ClapTrap(std::string name, int HP, int mana, int AD){
 	this->HP = HP;
 	this->mana = mana;
 	this->AD = AD;
-	std::cout << name << " player has been constructed" << std::endl;
-	std::cout << "so weak! only " << AD << " damage?" << std::endl;
+	std::cout << name << " ClapTrap player has been constructed" << std::endl;
 }
 
 ClapTrap::~ClapTrap(){
@@ -14,8 +13,8 @@ ClapTrap::~ClapTrap(){
 }
 
 void ClapTrap::attack(const std::string& target){
-	if (this->AD == 0)
-		std::cout << "0 damage? use your head!" << std::endl;
+	if (this->AD <= 0)
+		std::cout << "ClapTrap " << this->name << " is so weak to attack" << std::endl;
 	else {
 		if (this->mana > 0){
 			std::cout << "ClapTrap " << this->name << " attacked " << target << ", causing " << this->AD << " points of damage!" << std::endl;
