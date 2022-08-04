@@ -5,7 +5,7 @@
 #include <string>
 
 class ClapTrap{
-	protected:
+	private:
 		std::string name;
 		int HP;
 		int mana;

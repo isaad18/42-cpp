@@ -1,23 +1,25 @@
-#include"ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name){
+FragTrap::ClapTrap(std::string name){
 	this->name = name;
-	this->HP = 10;
-	this->mana = 10;
-	this->AD = 0;
-	std::cout << name << " ClapTrap player has been constructed" << std::endl;
+	this->HP = 100;
+	this->mana = 100;
+	this->AD = 30;
+	ClapTrap bot(bot);
+	std::cout << name << " FragTrap player has been constructed" << std::endl;
 }
 
-ClapTrap::~ClapTrap(){
-	std::cout << "ClapTrap " << this->name << " has been destroyed, it was already useless" << std::endl;
+FragTrap::~FragTrap(){
+	std::cout << "FragTrap " << this->name << " has been destroyed, it was already useless" << std::endl;
 }
 
-void ClapTrap::attack(const std::string& target){
+void FragTrap::attack(const std::string& target){
 	if (this->AD <= 0)
-		std::cout << "ClapTrap " << this->name << " is so weak to attack" << std::endl;
+		std::cout << "FragTrap " << this->name << " is so weak to attack" << std::endl;
 	else {
 		if (this->mana > 0){
-			std::cout << "ClapTrap " << this->name << " attacked " << target << ", causing " << this->AD << " points of damage!" << std::endl;
+			std::cout << "FragTrap " << this->name << " attacked " << target << ", causing " << this->AD << " points of damage!" << std::endl;
 			this->mana--;
 		}
 		else
@@ -25,7 +27,7 @@ void ClapTrap::attack(const std::string& target){
 	}
 }
 
-void ClapTrap::takeDamage(unsigned int amount){
+void FragTrap::takeDamage(unsigned int amount){
 	if (HP <= 0)
 		std::cout << this->name << " is already dead" << std::endl;
 	else {
@@ -37,7 +39,7 @@ void ClapTrap::takeDamage(unsigned int amount){
 	}
 }
 
-void ClapTrap::beRepaired(unsigned int amount){
+void FragTrap::beRepaired(unsigned int amount){
 	if (HP <= 0)
 		std::cout << this->name << " is already dead" << std::endl;
 	else {

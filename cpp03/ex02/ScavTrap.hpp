@@ -3,11 +3,13 @@
 
 #include <iostream>
 #include <string>
-#include "ClapTrap.hpp"
 
-class ScavTrap: virtual public ClapTrap{
+class ScavTrap{
 	private:
-		ScavTrap();
+		std::string name;
+		int HP;
+		int mana;
+		int AD;
 	public:
 		ScavTrap(std::string name);
 		virtual ~ScavTrap();
