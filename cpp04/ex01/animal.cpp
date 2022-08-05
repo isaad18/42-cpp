@@ -40,6 +40,27 @@ Cat &Cat::operator=(Cat const &other)
 {this->type = other.type; return *this;}
 
 //________________________________________________________________________//
+//Brain//
+
+Brain(){
+	std::cout << "Brain has been constructed" << std::endl;
+}
+
+Brain(Brain const& other){
+	std::cout << "Brain has been constructed" << std::endl;
+}
+
+Brain::~Brain(){
+	std::cout << "Brain has been destroyed." << std::endl;
+}
+
+void get_random_idea(){
+	static i;
+	std::cout << this->ideas[i] << std::endl;
+	i = (i + 1) % 99;
+}
+
+//________________________________________________________________________//
 //Animal//
 
 Animal::Animal():

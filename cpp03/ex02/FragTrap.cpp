@@ -40,7 +40,7 @@ void FragTrap::attack(const std::string& target){
 			std::cout << "FragTrap " << this->name << " attacked " << target << ", causing " << this->AD << " points of damage!" << std::endl;
 			this->mana--;
 			std::cout << ADmsg[i] << std::endl;
-			i = (i + 1) % 5;
+			i = (i + 1) % 4;
 		}
 		else
 			std::cout << this->name << " has no enough mana!" << std::endl;
