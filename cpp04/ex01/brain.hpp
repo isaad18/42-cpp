@@ -6,11 +6,12 @@
 
 class Brain{
 	private:
-		static const std::string ideas[100];
+		static const int i = 100;
+		static const std::string ideas[i];
 	public:
 		Brain();
 		Brain(Brain const& other);
-		Animal &operator=(Animal const &other){}
+		Brain &operator=(Brain const &other){}
 		virtual ~Brain();
 		void get_random_idea();
 }
