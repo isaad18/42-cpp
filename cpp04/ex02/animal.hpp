@@ -12,6 +12,7 @@ class Animal{
 	public:
 		Animal();
 		Animal(Animal const& other);
+		Animal(std::string new_type): type(new_type){}
 		virtual ~Animal();
 		Animal &operator=(Animal const &other){this->type = other.type; return *this;}
 		void makeSound() const;

@@ -16,6 +16,7 @@ class Dog: virtual public Animal {
 		virtual ~Dog();
 		Dog &operator=(Dog const &other);
 		std::string think(){return (idea.get_random_idea());}
+		void makeSound() const;
 };
 
 #endif

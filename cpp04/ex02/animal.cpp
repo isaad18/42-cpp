@@ -21,6 +21,10 @@ Dog::~Dog(){std::cout << "Animal " << type << "was destroyed." << std::endl;}
 Dog &Dog::operator=(Dog const &other)
 {this->type = other.type; return *this;}
 
+void Dog::makeSound() const{
+	std::cout << "wooofffff wooooofffff!!!" << std::endl;
+}
+
 //________________________________________________________________________//
 //Cat//
 
@@ -39,6 +43,10 @@ Cat::~Cat()
 
 Cat &Cat::operator=(Cat const &other)
 {this->type = other.type; return *this;}
+
+void Cat::makeSound() const{
+	std::cout << "meowwwwwwwwwwwwwwwww!!!!!!" << std::endl;
+}
 
 //________________________________________________________________________//
 //Brain//
@@ -163,6 +171,7 @@ std::string Brain::get_random_idea() const{
 	static int i;
 	std::string random;
 	random = this->ideas[i];
+	// std::cout << this->ideas[i] << std::endl;
 	i = (i + 1) % 99;
 	return random;
 }
