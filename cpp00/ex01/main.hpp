@@ -2,13 +2,12 @@
 
 # include<string>
 # include<iostream>
+# include<ios>
 # include<cstdlib>
 
 class Contact{
 	private:
 		std::string line;
-		static const int i = 100;
-		static std::string ideas[i];
 	public:
 		std::string first_name;
 		std::string last_name;
