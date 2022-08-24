@@ -12,6 +12,9 @@ const Animal* i = new Cat();
 // std::cout << ll.get_random_idea() << std::endl;
 // std::cout << ll.get_random_idea() << std::endl;
 // i = j;
+
+Cat cat;
+cat = cat;
 std::cout << j->getType() << std::endl;
 std::cout << i->getType() << std::endl;
 std::cout << i->getIdea() << std::endl;

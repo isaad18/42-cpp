@@ -6,7 +6,7 @@
 
 class Cat : virtual public Animal{
 	private:
-		Brain idea;
+		Brain *idea;
 		std::string own_type;
 	public :
 		Cat();

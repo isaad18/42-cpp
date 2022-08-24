@@ -42,7 +42,9 @@ Cat::~Cat()
 {std::cout << "Animal " << type << "was destroyed." << std::endl;}
 
 Cat &Cat::operator=(Cat const &other)
-{this->type = other.type; return *this;}
+{this->type = other.type;
+this->idea = other.idea;
+ return *this;}
 
 void Cat::makeSound() const{
 	std::cout << "meowwwwwwwwwwwwwwwww!!!!!!" << std::endl;
