@@ -1,6 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory `/Users/isaad/Desktop/cpp'
-make: Leaving directory `/Users/isaad/Desktop/cpp'
+make: Entering directory `/Users/isaad/Desktop/42-cpp'
+make: Leaving directory `/Users/isaad/Desktop/42-cpp'
  
 make: *** No targets specified and no makefile found.  Stop.
 

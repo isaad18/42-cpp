@@ -1,8 +1,0 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory `/Users/isaad/Desktop/cpp/cpp01/ex00'
-c++    -c -o main.o main.cpp
-c++    -c -o Zombie.o Zombie.cpp
-c++    -c -o randomchump.o randomchump.cpp
-c++ -Wall -Werror -Wextra -o zombie main.o Zombie.o randomchump.o
-make: Leaving directory `/Users/isaad/Desktop/cpp/cpp01/ex00'
- 
