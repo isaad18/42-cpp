@@ -3,20 +3,19 @@
 
 #include <string>
 #include <iostream>
-#include "animal.hpp"
-#include "brain.hpp"
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class Dog: virtual public Animal {
+class Dog: public Animal {
 	private:
-		Brain idea;
-		std::string own_type;
+		Brain *idea;
 	public :
 		Dog();
 		Dog(Dog const& other);
 		virtual ~Dog();
 		Dog &operator=(Dog const &other);
-		std::string think(){return (idea.get_random_idea());}
 		void makeSound() const;
+		std::string getIdea() const;
 };
 
 #endif

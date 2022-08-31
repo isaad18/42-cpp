@@ -1,8 +1,14 @@
 #include"ClapTrap.hpp"
 
 int main(){
-	ClapTrap trap("omar", 10, 10, 0);
-	trap.attack("no one");
-	trap.takeDamage(5);
-	trap.takeDamage(5);
+	{
+		ClapTrap cl4ptp("cl4ptp");
+
+		cl4ptp.attack("Handsome Jack");
+		cl4ptp.takeDamage(6);
+		cl4ptp.beRepaired(4);
+		cl4ptp.takeDamage(3);
+		cl4ptp.beRepaired(8);
+		cl4ptp.takeDamage(17);
+	}
 }

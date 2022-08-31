@@ -5,17 +5,15 @@
 #include <string>
 #include "ClapTrap.hpp"
 
-class ScavTrap: virtual public ClapTrap{
+class ScavTrap: public ClapTrap{
 	private:
-		ScavTrap();
 	public:
+		ScavTrap();
 		ScavTrap(std::string name);
-		ScavTrap(ScavTrap const& other){this->name = other.name; this->HP = other.HP; this->mana = other.mana; this->AD = other.AD;}
-		ScavTrap &operator=(ScavTrap const &other){this->name = other.name; this->HP = other.HP; this->mana = other.mana; this->AD = other.AD; return *this; }
+		ScavTrap(ScavTrap const& other);
+		ScavTrap &operator=(ScavTrap const &other);
 		virtual ~ScavTrap();
-		void Sattack(const std::string& target);
-		void StakeDamage(unsigned int amount);
-		void SbeRepaired(unsigned int amount);
+		void guardGate();
 };
 
 #endif // !1

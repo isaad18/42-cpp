@@ -1,12 +1,18 @@
 #include"ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name, int HP, int mana, int AD){
-	this->name = name;
-	this->HP = HP;
-	this->mana = mana;
-	this->AD = AD;
-	std::cout << name << " ClapTrap player has been constructed" << std::endl;
+ClapTrap::ClapTrap(): name("bot"), HP(10), mana(10), AD(0) {
+	std::cout << "ClapTrap has been constructed" << std::endl;
 }
+
+ClapTrap::ClapTrap(std::string name): name(name), HP(10), mana(10), AD(0){
+	std::cout << "ClapTrap has been constructed" << std::endl;
+}
+
+ClapTrap::ClapTrap(ClapTrap const& other) : name(other.name), HP(other.HP), mana(other.mana), AD(other.AD){
+	std::cout << "ClapTrap copied and has been constructed" << std::endl;
+}
+
+ClapTrap &ClapTrap::operator=(ClapTrap const &other){this->name = other.name; this->HP = other.HP; this->mana = other.mana; this->AD = other.AD; return *this; }
 
 ClapTrap::~ClapTrap(){
 	std::cout << "ClapTrap " << this->name << " has been destroyed, it was already useless" << std::endl;

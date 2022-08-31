@@ -2,15 +2,14 @@
 #include "ClapTrap.hpp"
 
 std::string FragTrap::ADmsg[hi5guys] = {
-	"facckkkk!",
-	"take that shit!",
-	"put it in yo ass",
-	"cover the face fck the base!!",
+	"ping-pong",
+	"nothing",
+	"cpp03 loading",
+	"FragTrap talking",
 	"hi, I am wall-E"
 };
 
 FragTrap::FragTrap(){
-	ClapTrap clone("SHITE");
 	this->name = "BOT";
 	this->HP = 100;
 	this->mana = 100;
@@ -19,7 +18,6 @@ FragTrap::FragTrap(){
 }
 
 FragTrap::FragTrap(std::string name){
-	ClapTrap clone("SHITE");
 	this->name = name;
 	this->HP = 100;
 	this->mana = 100;
@@ -29,46 +27,17 @@ FragTrap::FragTrap(std::string name){
 
 FragTrap::~FragTrap(){
 	std::cout << "FragTrap " << this->name << " has been destroyed, it was already useless" << std::endl;
+	std::cout << name << " FragTrap player has been constructed" << std::endl;
 }
 
-void FragTrap::attack(const std::string& target){
+FragTrap::FragTrap(FragTrap const& other){this->name = other.name; this->HP = other.HP; this->mana = other.mana; this->AD = other.AD;
+}
+
+FragTrap &FragTrap::operator=(FragTrap const &other){this->name = other.name; this->HP = other.HP; this->mana = other.mana; this->AD = other.AD; return *this; }
+
+void FragTrap::highFivesGuys(){
 	static int i;
-	if (this->AD <= 0)
-		std::cout << "FragTrap " << this->name << " is so weak to attack" << std::endl;
-	else {
-		if (this->mana > 0){
-			std::cout << "FragTrap " << this->name << " attacked " << target << ", causing " << this->AD << " points of damage!" << std::endl;
-			this->mana--;
-			std::cout << ADmsg[i] << std::endl;
-			i = (i + 1) % 4;
-		}
-		else
-			std::cout << this->name << " has no enough mana!" << std::endl;
-	}
-}
 
-void FragTrap::takeDamage(unsigned int amount){
-	if (HP <= 0)
-		std::cout << this->name << " is already dead" << std::endl;
-	else {
-		this->HP -= amount;
-		if (this->HP <= 0)
-			std::cout << this->name << " died" << std::endl;
-		else
-			std::cout << this->name << " got damaged, current HP: " << this->HP << std::endl;
-	}
-}
-
-void FragTrap::beRepaired(unsigned int amount){
-	if (HP <= 0)
-		std::cout << this->name << " is already dead" << std::endl;
-	else {
-		if (this->mana > 0) {
-			this->HP += amount;
-			std::cout << name << " has " << this->HP << " HP curently" << std::endl;
-			this->mana--;
-		}
-		else
-			std::cout << this->name << " has no enough mana!" << std::endl;
-	}
+	std::cout << ADmsg[i] << std::endl;
+	i = (i + 1) % 5;
 }

@@ -11,7 +11,7 @@ class Brain{
 	public:
 		Brain();
 		Brain(Brain const& other);
-		Brain &operator=(Brain const &other){return *this;}
+		Brain &operator=(Brain const &other);
 		virtual ~Brain();
 		std::string get_random_idea() const;
 };

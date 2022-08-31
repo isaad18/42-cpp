@@ -3,7 +3,7 @@
 
 #include <string>
 #include <iostream>
-#include "animal.hpp"
+#include "Animal.hpp"
 
 class Dog: virtual public Animal {
 	private:
@@ -13,6 +13,7 @@ class Dog: virtual public Animal {
 		Dog(Dog const& other);
 		virtual ~Dog();
 		Dog &operator=(Dog const &other);
+		void makeSound() const;
 };
 
 #endif

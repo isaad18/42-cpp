@@ -3,19 +3,17 @@
 
 #include <string>
 #include <iostream>
-#include "brain.hpp"
+#include "Brain.hpp"
 
 class Animal{
 	protected:
 		std::string type;
-		const Brain ideas;
 	public:
 		Animal();
 		Animal(Animal const& other);
 		virtual ~Animal();
-		Animal &operator=(Animal const &other){this->type = other.type; return *this;}
-		void makeSound() const;
-		std::string getIdea() const;
+		Animal &operator=(Animal const &other);
+		virtual void makeSound() const;
 		std::string getType() const;
 };
 

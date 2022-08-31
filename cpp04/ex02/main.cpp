@@ -1,28 +1,38 @@
-#include "animal.hpp"
-#include "dog.hpp"
-#include "cat.hpp"
-#include "brain.hpp"
+#include "Animal.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "Brain.hpp"
 
-int main() {
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-// Brain ll;
-// std::cout << ll.get_random_idea() << std::endl;
-// std::cout << ll.get_random_idea() << std::endl;
-// std::cout << ll.get_random_idea() << std::endl;
-// i = j;
+int main()
+{
+	Animal *animals[10];
+	Animal *dogggg = new Dog();
+	Animal *cat = new Cat();
+	dogggg->makeSound();
+	cat->makeSound();
 
-Cat cat;
-cat = cat;
-std::cout << j->getType() << std::endl;
-std::cout << i->getType() << std::endl;
-std::cout << i->getIdea() << std::endl;
-std::cout << i->getIdea() << std::endl;
-std::cout << i->getIdea() << std::endl;
-i->makeSound();
-meta->makeSound();
-delete i;
-delete j;
-delete meta;
-return 0; }
+	Animal *test;
+	test = cat;
+	test->makeSound();
+
+	for(int i = 0; i < 10; i++)
+	{
+		if(i < 5)
+			animals[i] = new Cat();
+		else
+			animals[i] = new Dog();
+	}
+	for(int i = 0; i < 10; i++)
+	{
+		animals[i]->makeSound();
+	}
+	for(int i = 0; i < 10; i++)
+	{
+		delete animals[i];
+	}
+	delete dogggg;
+	delete cat;
+	return 0;
+}

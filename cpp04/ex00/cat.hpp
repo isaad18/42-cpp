@@ -1,7 +1,9 @@
 #ifndef CAT_HPP
 #define CAT_HPP
 
-#include "animal.hpp"
+#include "Animal.hpp"
+#include <string>
+#include <iostream>
 
 class Cat : virtual public Animal{
 	private:
@@ -11,6 +13,7 @@ class Cat : virtual public Animal{
 		Cat(Cat const& other);
 		virtual ~Cat();
 		Cat &operator=(Cat const &other);
+		void makeSound() const;
 };
 
 #endif

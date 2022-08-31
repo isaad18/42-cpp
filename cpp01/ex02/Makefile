@@ -13,7 +13,7 @@ NAME		= brain
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-				$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+				$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
 
 clean:
 			$(RM) $(OBJS)

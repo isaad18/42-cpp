@@ -19,9 +19,13 @@ class Harl{
 		Harl(void);
 		void init(void);
 		void complain(std::string level){
+			bool ok = false;
 			for (int i = 0; i < 4; i++)
-				if(level == data[i].name)
-					(this->*(data[i].ptr))();
+				if(level == data[i].name){
+					ok = true;
+					(this->*(data[i].ptr))();}
+			if (ok == false)
+				std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 		}
 };
 

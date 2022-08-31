@@ -1,8 +1,18 @@
 #include"ClapTrap.hpp"
 
+ClapTrap::ClapTrap(): name("bot"), HP(10), mana(10), AD(0) {
+	std::cout << name << " ClapTrap player has been constructed by default" << std::endl;
+}
+
+ClapTrap::ClapTrap(ClapTrap const& other) : name(other.name), HP(other.HP), mana(other.mana), AD(other.AD){
+	std::cout << name << " ClapTrap player has been constructed by copy" << std::endl;
+};
+
+ClapTrap &ClapTrap::operator=(ClapTrap const &other){this->name = other.name; this->HP = other.HP; this->mana = other.mana; this->AD = other.AD; return *this; }
+
 ClapTrap::ClapTrap(std::string name){
-	this->name = name;
 	this->HP = 10;
+	this->name = name;
 	this->mana = 10;
 	this->AD = 0;
 	std::cout << name << " ClapTrap player has been constructed" << std::endl;

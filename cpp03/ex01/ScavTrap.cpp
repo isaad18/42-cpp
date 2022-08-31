@@ -8,45 +8,21 @@ ScavTrap::ScavTrap(std::string name){
 	std::cout << name << " ScavTrap player has been constructed" << std::endl;
 }
 
+ScavTrap::ScavTrap(){
+	std::cout << name << " ScavTrap player has been constructed" << std::endl;
+}
+
 ScavTrap::~ScavTrap(){
 	std::cout << "ScavTrap " << this->name << " has been destroyed, it was already useless" << std::endl;
 }
 
-void ScavTrap::Sattack(const std::string& target){
-	if (this->AD <= 0)
-		std::cout << "ScavTrap " << this->name << " is so weak to attack" << std::endl;
-	else {
-		if (this->mana > 0){
-			std::cout << "ScavTrap " << this->name << " attacked " << target << ", causing " << this->AD << " points of damage!" << std::endl;
-			this->mana--;
-		}
-		else
-			std::cout << this->name << " has no enough mana!" << std::endl;
-	}
+ScavTrap::ScavTrap(ScavTrap const& other){
+	this->name = other.name; this->HP = other.HP; this->mana = other.mana; this->AD = other.AD;
+	std::cout << name << " ScavTrap player has been constructed" << std::endl;
 }
 
-void ScavTrap::StakeDamage(unsigned int amount){
-	if (HP <= 0)
-		std::cout << this->name << " is already dead" << std::endl;
-	else {
-		this->HP -= amount;
-		if (this->HP <= 0)
-			std::cout << this->name << " died" << std::endl;
-		else
-			std::cout << this->name << " got damaged, current HP: " << this->HP << std::endl;
-	}
-}
+ScavTrap &ScavTrap::operator=(ScavTrap const &other){this->name = other.name; this->HP = other.HP; this->mana = other.mana; this->AD = other.AD; return *this;}
 
-void ScavTrap::SbeRepaired(unsigned int amount){
-	if (HP <= 0)
-		std::cout << this->name << " is already dead" << std::endl;
-	else {
-		if (this->mana > 0) {
-			this->HP += amount;
-			std::cout << name << " has " << this->HP << " HP curently" << std::endl;
-			this->mana--;
-		}
-		else
-			std::cout << this->name << " has no enough mana!" << std::endl;
-	}
+void ScavTrap::guardGate(){
+	std::cout << "ScavTrap " << this->name << " is now in gate keeper mode" << std::endl;
 }

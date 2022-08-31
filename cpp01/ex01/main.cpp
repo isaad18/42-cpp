@@ -4,6 +4,7 @@ Zombie*    zombieHorde(int N, std::string name);
 void randomChump(std::string name);
 
 int main(){
-    zombieHorde(2, "ahmad");
+    Zombie *Horde = zombieHorde(2, "ahmad");
+	delete [] Horde;
     return 0;
 }

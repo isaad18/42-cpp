@@ -5,6 +5,6 @@ void Zombie::announce(void)
 	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-void Zombie::destroy(void){
-	std::cout << "destroyed: " << name << std::endl;
+Zombie::~Zombie(void) {
+	std::cout << "Zombie " << name << " has been destroyed" << std::endl;
 }

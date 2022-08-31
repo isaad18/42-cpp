@@ -3,7 +3,7 @@
 
 #include <string>
 #include <iostream>
-#include "brain.hpp"
+#include "Brain.hpp"
 
 class Animal{
 	protected:
@@ -12,11 +12,10 @@ class Animal{
 	public:
 		Animal();
 		Animal(Animal const& other);
-		Animal(std::string new_type): type(new_type){}
+		Animal(std::string new_type);
 		virtual ~Animal();
-		Animal &operator=(Animal const &other){this->type = other.type; return *this;}
-		void makeSound() const;
-		std::string getIdea() const;
+		Animal &operator=(Animal const &other);
+		virtual void makeSound() const=0;
 		std::string getType() const;
 };
 
