@@ -62,3 +62,13 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other){
 	this->grade = other.getGrade();
 	return *this;
 }
+
+void Bureaucrat::signForm(Form &F){
+	try{
+		F.beSigned(*this);
+		std::cout << "Form has been signed successfully" << std::endl;
+	}
+	catch (std::exception &e){
+		std::cerr << e.what() << std::endl;
+	}
+}
