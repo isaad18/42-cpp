@@ -23,9 +23,9 @@ int	main(void)
 
 	Bureaucrat	ber1 = Bureaucrat("employee", 100);
 	Bureaucrat	ber2 = Bureaucrat("President", 1);
-	Form	form1 = Form("low", 144, 120);
-	Form	form2 = Form("medium", 99, 80);
-	Form	form3 = Form("topsecret", 3, 2);
+	Form	form1 = Form("ma2", 144, 120);
+	Form	form2 = Form("ma22", 99, 80);
+	Form	form3 = Form("ma222", 3, 2);
 
 	std::cout << std::endl << "Employee" << std::endl;
 	ber1.signForm(form1);

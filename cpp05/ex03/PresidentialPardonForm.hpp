@@ -21,6 +21,5 @@ class PresidentialPardonForm : public Form{
 		std::string get_target() const;
 		void execute(Bureaucrat const & executor) const;
 };
-std::ostream &operator<<(std::ostream &s, PresidentialPardonForm const &_new);
 
 #endif

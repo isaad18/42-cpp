@@ -15,7 +15,7 @@ int main(){
 	// std::cout << test << std::endl;
 
 
-	Bureaucrat a("M", 1);
+	Bureaucrat a("www", 1);
 	std::cout << a << std::endl;
 	Bureaucrat b(a);
 	std::cout << b << std::endl;
@@ -24,9 +24,9 @@ int main(){
 
 	try
 	{
-		//Bureaucrat  ber("Moatsem", 0);
-		Bureaucrat  ber("Moatsem", 150);
-		//Bureaucrat  ber("Moatsem", 151);
+		//Bureaucrat  ber("imad", 0);
+		Bureaucrat  ber("imad", 150);
+		//Bureaucrat  ber("imad", 151);
 		std::cout << ber.getGrade() << std::endl;
 	}
 	catch (std::exception &e)
@@ -36,7 +36,7 @@ int main(){
 
 	try
 	{
-		Bureaucrat ber1("Moatsem1", 1);
+		Bureaucrat ber1("imad1", 1);
 		ber1.incGrade();
 		std::cout << ber1.getGrade() << std::endl;
 	}
@@ -47,7 +47,7 @@ int main(){
 
 	try
 	{
-		Bureaucrat ber2("Moatsem2", 150);
+		Bureaucrat ber2("imad2", 150);
 		ber2.decGrade();
 		std::cout << ber2.getGrade() << std::endl;
 	}

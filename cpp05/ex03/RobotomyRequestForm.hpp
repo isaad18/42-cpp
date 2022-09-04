@@ -21,6 +21,5 @@ class RobotomyRequestForm : public Form{
 		std::string get_target() const;
 		void execute(Bureaucrat const & executor) const;
 };
-std::ostream &operator<<(std::ostream &s, RobotomyRequestForm const &_new);
 
 #endif

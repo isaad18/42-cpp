@@ -11,13 +11,13 @@ int	main(void)
 	// ShrubberyCreationForm s("FORM", 11, 22);
 	// s.getName();
 
-	ShrubberyCreationForm shrubbery("S1");
-	RobotomyRequestForm robotomy("R1");
-	PresidentialPardonForm presidential("P1");
-	Bureaucrat ber1("Moa", 1);
-	Bureaucrat ber2("Moa2", 146);
-	Bureaucrat ber3("Moa3", 6);
-	Bureaucrat ber4("Moa4", 26);
+	ShrubberyCreationForm shrubbery("S");
+	RobotomyRequestForm robotomy("R");
+	PresidentialPardonForm presidential("P");
+	Bureaucrat ber1("shsh", 1);
+	Bureaucrat ber2("shsh2", 146);
+	Bureaucrat ber3("shsh3", 6);
+	Bureaucrat ber4("shsh4", 26);
 
 	// ber1.signForm(shrubbery);
 	// ber1.executeForm(shrubbery);

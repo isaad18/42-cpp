@@ -24,7 +24,7 @@ const char* Intern::InternNotFoundException::what() const throw(){
 	return "no Form Found";
 }
 
-Form* 		Intern::makeForm(std::string form, std::string target)
+Form*	Intern::makeForm(std::string form, std::string target)
 {
 	std::string formName[3] = {"Shrubbery Creation", "Robotomy Request", "Presidential Pardon"};
 	ptr funcPointers[3] = {&Intern::makeShrubbery, &Intern::makeRobotomy, &Intern::makePresidential};

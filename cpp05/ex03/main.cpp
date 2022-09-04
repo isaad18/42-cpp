@@ -11,7 +11,7 @@ int	main(void)
 	Form* rrf;
 	rrf = someRandomIntern.makeForm("Robotomy Request", "Bender");
 
-	Bureaucrat ber1("Moa", 1);
+	Bureaucrat ber1("shsh", 1);
 	if(rrf)
 	{
 		ber1.signForm(*rrf);
