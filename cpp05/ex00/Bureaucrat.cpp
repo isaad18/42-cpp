@@ -1,27 +1,27 @@
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat(): name("default"), grade(150){
+	std::cout << "Bureaucrat: " << name << ", has been created with Grade " << grade << "." << std::endl;
+}
+
 Bureaucrat::Bureaucrat(const std::string &name, int grade): name(name){
-	this->grade = grade;
-	std::cout << " Bureaucrat: " << name << ", has been created with Grade " << grade << "." << std::endl;
-	if (this->grade > 0 && this->grade < 151)
-		std::cout << "No exception needed for this grade " << this->grade << std::endl;
-	else if (this->grade < 1)
+	if (grade < 1)
 		throw GradeTooHighException();
-	else if (this->grade > 150)
+	else if (grade > 150)
 		throw GradeTooLowException();
+	else
+		std::cout << "No exception needed for this grade " << grade << std::endl;
+	this->grade = grade;
+	std::cout << "Bureaucrat: " << name << ", has been created with Grade " << grade << "." << std::endl;
 
 }
 
-void Bureaucrat::GradeTooHighException() const{
-	std::cout << "Bureaucrat: Grade too high exception." << std::endl;
-}
+const char* Bureaucrat::GradeTooLowException::what() const throw(){return "Grade Too Low";}
 
-void Bureaucrat::GradeTooLowException() const{
-	std::cout << "Bureaucrat: Grade too Low exception." << std::endl;
-}
+const char* Bureaucrat::GradeTooHighException::what() const throw(){return "Grade Too High";}
 
 Bureaucrat::~Bureaucrat(){
-	std::cout << " Bureaucrat: " << this->name << ", of Grade " << this->grade << " has been destroyed."<< std::endl;
+	std::cout << "Bureaucrat: " << this->name << ", of Grade " << this->grade << " has been destroyed."<< std::endl;
 }
 
 std::string Bureaucrat::getName() const{
@@ -32,12 +32,16 @@ int Bureaucrat::getGrade() const{
 	return this->grade;
 }
 
-void Bureaucrat::incrementGrade(){
+void Bureaucrat::incGrade(){
+	if (this->grade - 1 < 1)
+		throw GradeTooHighException();
 	std::cout << "Incremented successfully." << std::endl;
 	this->grade--;
 }
 
-void Bureaucrat::decrementGrade(){
+void Bureaucrat::decGrade(){
+	if (this->grade + 1 > 150)
+		throw GradeTooLowException();
 	std::cout << "Decremented successfully." << std::endl;
 	this->grade++;
 }
@@ -45,4 +49,16 @@ void Bureaucrat::decrementGrade(){
 std::ostream &operator<<(std::ostream &s, Bureaucrat const &_new){
 	s << _new.getName() << " bureaucrat grade " << _new.getGrade();
 	return s;
+}
+
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other){
+	const_cast<std::string&>(this->name) = other.getName();
+	if (grade < 1)
+		throw GradeTooHighException();
+	else if (grade > 150)
+		throw GradeTooLowException();
+	else
+		std::cout << "No exception needed for this grade " << grade << std::endl;
+	this->grade = other.getGrade();
+	return *this;
 }

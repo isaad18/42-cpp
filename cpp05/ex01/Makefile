@@ -1,4 +1,4 @@
-SRCS		= main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp WrongCat.cpp WrongAnimal.cpp
+SRCS		= main.cpp Bureaucrat.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
@@ -6,7 +6,7 @@ CXX			= c++
 
 $(RM)		= rm -f
 
-CXXFLAGS	= -Wall -Werror -Wextra
+CXXFLAGS	= -Wall -Werror -Wextra -std=c++98
 
 NAME		= animal
 
