@@ -1,38 +1,33 @@
 #include "Bureaucrat.hpp"
-
-void	init_form(std::string name, int sGrade, int eGrade)
-{
-	try
-	{
-		Form form = Form(name, sGrade, eGrade);
-		std::cout << form << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-}
-
+#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main(void)
 {
-	init_form("Form1", 1, 150);
-	init_form("Form4", 1, 151);
-	init_form("Form3", -1, 150);
-	init_form("Form5", -2, 155);
 
-	Bureaucrat	ber1 = Bureaucrat("employee", 100);
-	Bureaucrat	ber2 = Bureaucrat("President", 1);
-	Form	form1 = Form("low", 144, 120);
-	Form	form2 = Form("medium", 99, 80);
-	Form	form3 = Form("topsecret", 3, 2);
+	// Form	f;
+	// ShrubberyCreationForm s("FORM", 11, 22);
+	// s.getName();
 
-	std::cout << std::endl << "Employee" << std::endl;
-	ber1.signForm(form1);
-	ber1.signForm(form2);
-	ber1.signForm(form3);
-	std::cout << "President" << std::endl;
-	ber2.signForm(form1);
-	ber2.signForm(form2);
-	ber2.signForm(form3);
+	ShrubberyCreationForm shrubbery("S1");
+	RobotomyRequestForm robotomy("R1");
+	PresidentialPardonForm presidential("P1");
+	Bureaucrat ber1("Moa", 1);
+	Bureaucrat ber2("Moa2", 146);
+	Bureaucrat ber3("Moa3", 6);
+	Bureaucrat ber4("Moa4", 26);
+
+	// ber1.signForm(shrubbery);
+	// ber1.executeForm(shrubbery);
+	// ber2.signForm(shrubbery);
+	// ber2.executeForm(shrubbery);
+
+	ber1.signForm(robotomy);
+	ber1.executeForm(robotomy);
+	ber1.signForm(presidential);
+	ber3.executeForm(presidential);
+	// ber2.signForm(robotomy);
+	// ber2.executeForm(robotomy);
 }

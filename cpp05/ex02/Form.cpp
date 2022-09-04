@@ -47,6 +47,10 @@ const char* Form::GradeTooHighException::what() const throw(){
 	return "Form Grade Too High";
 }
 
+const char* Form::FormNotSignedException::what() const throw(){
+	return "Form Not Signed";
+}
+
 void Form::beSigned(Bureaucrat &B){
 	if (B.getGrade() < this->s_rate)
 	{

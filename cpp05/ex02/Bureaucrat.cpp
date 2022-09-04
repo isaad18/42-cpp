@@ -72,3 +72,16 @@ void Bureaucrat::signForm(Form &F){
 		std::cerr << e.what() << std::endl;
 	}
 }
+
+void Bureaucrat::executeForm(Form const & form){
+	try{
+		form.execute(*this);
+		std::cout << "Form has been executed successfully by Bureaucrat" << std::endl;
+	}
+	catch (Form::GradeTooLowException &e){
+		std::cerr << "Bureaucrat failed to execute for because of the low grade" << std::endl;
+	}
+	catch (Form::FormNotSignedException &e){
+		std::cerr << "Bureaucrat failed to execute for because the Form is not signed" << std::endl;
+	}
+}
