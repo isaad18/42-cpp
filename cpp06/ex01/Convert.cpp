@@ -44,7 +44,7 @@ void print_converted(char *input, float F, int I, double D, char C){
 }
 
 void Converter(char *input, float *F, int *I, double *D, char *C){
-	*F = std::stof(input);
+	*F = static_cast<float>(atof(input));
 	*I = static_cast<int>(*F);
 	*D = static_cast<double>(*F);
 	if (*I >= 0 && *I <= 127)

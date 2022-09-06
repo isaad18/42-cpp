@@ -1,8 +1,10 @@
 #ifndef CONVERT_HPP
 #define CONVERT_HPP
 
-#include <iostream>
 #include <string>
+#include <iostream>
+#include <cstdlib>
+#include <stdint.h>
 
 typedef struct s_data{
 	float F;
@@ -13,7 +15,7 @@ typedef struct s_data{
 
 class Base{
 	public:
-		virtual void print();
+		virtual ~Base(){}
 };
 
 class A: public Base{

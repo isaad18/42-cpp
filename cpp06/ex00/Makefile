@@ -8,7 +8,7 @@ $(RM)		= rm -f
 
 CXXFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-NAME		= Bureaucrat
+NAME		= convert
 
 all:		$(NAME)
 

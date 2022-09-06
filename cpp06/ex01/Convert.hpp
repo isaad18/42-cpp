@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <stdint.h>
 
 typedef struct s_data{
     float F;
