@@ -4,17 +4,17 @@
 #include <iostream>
 #include <string>
 
-template <typename T>
-void func(unsigned int i, T &to_iter){
-	to_iter[i] = '0';
+template<typename T> void func(T& st)
+{
+	std::cout << "passed through here  " << st << std::endl;
 }
 
 template <typename T>
-void iter(T &s, int size, void (*func)(unsigned int index, T &to_iter)){
+void iter(T *s, int size, void (func)(T const &)){
 	if (size == 0)
 		return ;
 	for (int i = 0; i < size; i++)
-		(*func)(i, s);
+		func(s[i]);
 }
 
 #endif
