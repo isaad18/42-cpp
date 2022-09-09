@@ -5,7 +5,6 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-#include <array>
 #include <stdarg.h>
 
 #define RED "\033[0;31m"
@@ -33,7 +32,7 @@ class Span{
 		class PeacefulSegFault: public std::exception
 		{
 			const char* what() const throw(){
-				return RED"segmentation fault"RESET;
+				return RED "segmentation fault" RESET;
 			}
 		};
 };

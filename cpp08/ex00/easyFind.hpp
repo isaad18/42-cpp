@@ -16,17 +16,17 @@
 class PeacefulSegFault: public std::exception
 {
 	const char* what() const throw(){
-		return RED"segmentation fault"RESET;
+		return RED "segmentation fault" RESET;
 	}
 };
 
 template <typename T>
 int easyFind(T a, int b){
 	int result;
-	bool exists = std::find(std::begin(a), std::end(a), b) != std::end(a);
+	bool exists = std::find(a.begin(), a.end(), b) != std::end(a);
 	if (!exists)
 		throw PeacefulSegFault();
-	result = std::distance(std::begin(a), std::find(std::begin(a), std::end(a), b));
+	result = std::distance(a.begin(), std::find(a.begin(), a.end(), b));
 	return result;
 }
 
