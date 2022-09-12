@@ -23,7 +23,7 @@ class PeacefulSegFault: public std::exception
 template <typename T>
 int easyFind(T a, int b){
 	int result;
-	bool exists = std::find(a.begin(), a.end(), b) != std::end(a);
+	bool exists = std::find(a.begin(), a.end(), b) != a.end();
 	if (!exists)
 		throw PeacefulSegFault();
 	result = std::distance(a.begin(), std::find(a.begin(), a.end(), b));
