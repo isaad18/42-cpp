@@ -13,3 +13,12 @@
 	<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/isaad18/42-cpp?color=blue" />
 	<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/isaad18/42-cpp?color=green" />
 </p>
+
+## QuickStart
+
+### Make files are provided inside each excercise of each module, its commands are:
+
+#### all => execute all the files in the directory
+```
+make all
+```
