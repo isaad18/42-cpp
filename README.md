@@ -18,7 +18,22 @@
 
 ### Make files are provided inside each excercise of each module, its commands are:
 
-#### all => execute all the files in the directory
+#### all => executes all the files in the directory
 ```
 make all
+```
+
+#### clean => deletes all the object files
+```
+make clean
+```
+
+#### fclean => deletes the executable file with the object files
+```
+make fclean
+```
+
+#### re => deletes the executable file with the object files and then executes all the files in the directory
+```
+make re
 ```
